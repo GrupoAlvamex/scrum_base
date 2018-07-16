@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_scrum_meeting_user,access.scrum.meeting.user,model_scrum_meeting,scrum_base.group_scrum_user_base,1,1,1,1
+access_scrum_notes_user,access.scrum.notes.usera,model_scrum_notes,scrum_base.group_scrum_user_base,1,1,1,1
+access_scrum_product_user,access.scrum.product.user,model_scrum_product,scrum_base.group_scrum_user_base,1,1,1,1
+access_scrum_project_user,access.scrum.project.user,model_scrum_project,scrum_base.group_scrum_user_base,1,1,1,1
+access_scrum_review_user,access.scrum.review.user,model_scrum_review,scrum_base.group_scrum_user_base,1,1,1,1
+access_scrum_user_bug_user,access.scrum.user.bug.user,model_scrum_user_bug,scrum_base.group_scrum_user_base,1,1,1,1
+access_scrum_user_task_user,access.scrum.user.task.user,model_scrum_user_task,scrum_base.group_scrum_user_base,1,1,1,1
+access_scrum_user_story_user,access.scrum.user.story.user,model_scrum_user_story,scrum_base.group_scrum_user_base,1,1,1,1
+access_scrum_book_user,access.scrum.book.user,model_scrum_book,scrum_base.group_scrum_user_base,1,1,1,1
+access_scrum_wiki_user,access.scrum.wiki.user,model_scrum_wiki,scrum_base.group_scrum_user_base,1,1,1,1
+,,,,,,,
+access_project_tag_user,access.project.tag.use,model_project_tag,scrum_base.group_scrum_user_base,1,1,1,1
+access_product_tag_user,access.product.tag.use,model_product_tag,scrum_base.group_scrum_user_base,1,1,1,1
+access_book_tag_user,access.book.tag.use,model_book_tag,scrum_base.group_scrum_user_base,1,1,1,1

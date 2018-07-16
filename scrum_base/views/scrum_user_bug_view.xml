@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <odoo>
+    <data>
+    <record id="view_form_scrum_user_bug" model="ir.ui.view">
+         <field name="name">view.form.scrum.user_bug</field>
+         <field name="model">scrum.user.bug</field>
+         <field name="arch" type="xml">
+            <form string="Developer Bugs">
+              <header>
+                  <button name="exe_doing" string="Doing" class="oe_highlight" type="object"  attrs="{'invisible': [('state','!=','to_do')]}" />
+                  <button name="exe_done" string="Done" class="oe_highlight" type="object"  attrs="{'invisible': [('state','!=','doing')]}" />
+                  <button name="exe_qa" string="QA" class="oe_highlight" type="object"  attrs="{'invisible': [('state','!=','done')]}" />
+                  <button name="exe_delivery" string="Delivery" class="oe_highlight" type="object"  attrs="{'invisible': [('state','!=','qa')]}" />
+
+                  <button name="exe_open" string="Open" class="oe_highlight" type="object"  attrs="{'invisible': [('state','!=','delivery')]}" />
+                  <field name="state" widget="statusbar"/>
+              </header>
+              <sheet>
+                  <div class="oe_title">
+                           <h1>
+                               <field name="name" readonly="1"/>
+                           </h1>
+                        </div>
+
+                  <group>
+                      <group>
+                          <field name="desc" required="1"/>
+
+                          <field name="product_id"  options='{"no_create": 1, "no_open": 1}'/>
+                          <field name="task_id"  options='{"no_create": 1, "no_open": 1}'/>
+                          <field name="developer_id"  options='{"no_create": 1, "no_open": 1}'/>
+                       </group>
+                      <group>
+                          <field name="entry_date" readonly="1"/>
+                          <field name="end_date" readonly="1"/>
+                          <field name="file_name" invisible="1"/>
+                          <field name="file_01" filename="file_name"/>
+                       </group>
+                  </group>
+                  <field name="obs" widget="html"/>
+               </sheet>
+                <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                            <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_scrum_user_bug" model="ir.ui.view">
+         <field name="name">view.tree.scrum.user_bug</field>
+         <field name="model">scrum.user.bug</field>
+         <field name="arch" type="xml">
+             <tree colors="red:state!='delivery';">
+                 <field name="name"/>
+                 <field name="desc"/>
+
+                 <field name="entry_date"/>
+                 <field name="end_date"/>
+                 <field name="task_id"/>
+                 <field name="developer_id"/>
+                 <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+
+     <record id="scrum_bug_filter" model="ir.ui.view">
+        <field name="name">scrum.bug.filter</field>
+        <field name="model">scrum.user.bug</field>
+        <field name="arch" type="xml">
+             <search string="Search Invoice">
+                 <filter name="to_do" string="To Do" domain="[('state','=','to_do')]"/>
+                 <filter name="doing" string="Doing" domain="[('state','=','doing')]"/>
+                 <filter name="done" string="Done" domain="[('state','=','done')]"/>
+                 <filter name="qa" string="QA" domain="[('state','=','qa')]"/>
+                 <filter name="delivery" string="Delivery" domain="[('state','=','delivery')]"/>
+                 <separator/>
+                 <group expand="0" string="Group By">
+                     <filter string="User Story" context="{'group_by':'story_id'}"/>
+                     <filter string="Developer" context="{'group_by':'developer_id'}"/>
+                 </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_scrum_user_bug1" model="ir.actions.act_window">
+        <field name="name">Developer Bugs</field>
+        <field name="res_model">scrum.user.bug</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Press to create a New</p>
+       </field>
+    </record>
+
+    <menuitem id="menu_scrum_user_bug"
+        name="Developer Bugs"
+        parent="scrum_menu_2"
+        sequence="50"
+        action="action_scrum_user_bug1" />
+     </data>
+</odoo>

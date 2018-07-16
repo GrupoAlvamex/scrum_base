@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="seq_scrum_project" model="ir.sequence">
+            <field name="name">Scrum Project</field>
+            <field name="code">scrum.project</field>
+            <field name="prefix">SPJ/%(range_year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_scrum_product" model="ir.sequence">
+            <field name="name">Scrum Product</field>
+            <field name="code">scrum.product</field>
+            <field name="prefix">SPR/%(range_year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_scrum_user_story" model="ir.sequence">
+            <field name="name">User Story</field>
+            <field name="code">scrum.user.story</field>
+            <field name="prefix">UST/%(range_year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_scrum_user_task" model="ir.sequence">
+            <field name="name">Developer Task</field>
+            <field name="code">scrum.user.task</field>
+            <field name="prefix">DEV/%(range_year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_scrum_meeting" model="ir.sequence">
+            <field name="name">Scrum Meeting</field>
+            <field name="code">scrum.meeting</field>
+            <field name="prefix">DMI/%(range_year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_scrum_review" model="ir.sequence">
+            <field name="name">Scrum Review</field>
+            <field name="code">scrum.review</field>
+            <field name="prefix">RMT/%(range_year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_scrum_2_user_bug" model="ir.sequence">
+            <field name="name">Developer Bug</field>
+            <field name="code">scrum.user.bug</field>
+            <field name="prefix">BUG/%(range_year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_scrum_notes" model="ir.sequence">
+            <field name="name">Scrum Notes</field>
+            <field name="code">scrum.notes</field>
+            <field name="prefix">NTS/%(range_year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_scrum_wiki" model="ir.sequence">
+            <field name="name">Scrum Wiki</field>
+            <field name="code">scrum.wiki</field>
+            <field name="prefix">WIKI/%(range_year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_scrum_book" model="ir.sequence">
+            <field name="name">Scrum Book</field>
+            <field name="code">scrum.book</field>
+            <field name="prefix">BOOK/%(range_year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>
